@@ -1,0 +1,20 @@
+# IDE
+.idea/
+*.iml
+
+# System
+.DS_Store
+Thumbs.db
+
+# PureRef
+*.pureref
+*.pur
+
+# Instrukcje / PDF
+*.pdf
+*.docx
+instrukcja.txt
+
+# Archiwa
+*.zip
+*.rar
