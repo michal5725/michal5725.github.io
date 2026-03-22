@@ -1,3 +1,71 @@
 body {
-  background-color: #dfecff;
+  font-family: Arial, sans-serif;
+  background: url("silownia1.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.85);
+  margin: 30px auto;
+  padding: 20px;
+  width: 80%;
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+ul li {
+  margin: 8px 0;
+}
+
+footer {
+  background: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 }

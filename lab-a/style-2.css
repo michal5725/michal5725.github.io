@@ -1,3 +1,79 @@
 body {
-  background-color: #ecfbe6;
+  font-family: 'Trebuchet MS', sans-serif;
+  background: url("jasny.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #e6faff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 34px;
+  margin: 0;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+  font-weight: bold;
+  color: #e6faff;
+}
+
+section {
+  background: rgba(0, 0, 0, 0.55);
+  margin: 40px auto;
+  padding: 25px;
+  width: 80%;
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+}
+
+h2 {
+  font-size: 28px;
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+p {
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.65);
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 }
