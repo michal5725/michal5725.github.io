@@ -1,79 +1,184 @@
 body {
-  font-family: 'Trebuchet MS', sans-serif;
-  background: url("jasny.png") no-repeat center center fixed;
-  background-size: cover;
+  font-family: 'Courier New', monospace;
+  background: #0a0f14;
   color: #e6faff;
   margin: 0;
   padding: 0;
+  display: flex;
+  min-height: 100vh;
 }
 
 header {
-  background: rgba(0, 0, 0, 0.65);
-  padding: 25px;
+  width: 260px;
+  background: #000;
+  padding: 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  border-right: 3px solid #00eaff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
 }
 
 header h1 {
-  font-size: 34px;
-  margin: 0;
+  font-size: 22px;
+  margin: 20px 0;
   color: #00eaff;
+  text-align: center;
   text-shadow: 0 0 10px #00eaff;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 20px 0;
+  width: 100%;
+  text-align: center;
 }
 
 nav ul li {
-  display: inline-block;
-  margin: 0 15px;
-  font-weight: bold;
+  padding: 15px 0;
+  border-bottom: 1px solid #00eaff;
   color: #e6faff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li:hover {        /* Funkcja pisana przez AI, bardzo fajna opcja podśietlania opcji gdy najedzioe sie kursorem */
+  background: #00eaff;
+  color: #000;
+}
+
+main {
+  flex: 1;
+  margin-left: 260px;
+  padding: 40px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 section {
-  background: rgba(0, 0, 0, 0.55);
-  margin: 40px auto;
+  background: rgba(0, 0, 0, 0.6);
   padding: 25px;
-  width: 80%;
+  border: 2px solid #00eaff;
   border-radius: 10px;
-  backdrop-filter: blur(3px);
+  box-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {    /* Również AI pomogło fajnie dopasować zdjęcie jako tło w kwadracikach */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("silownia1.png") no-repeat center;
+  background-size: cover;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+section:hover {                /*  AI również (cała funkcja section:hover) */
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 234, 255, 0.6);
+}
+
+section * {
+  position: relative;
+  z-index: 2;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 24px;
   color: #00eaff;
   text-shadow: 0 0 8px #00eaff;
+  margin-top: 0;
 }
 
-p {
-  font-size: 19px;
-  line-height: 1.6;
-}
-
+p,
 ul li {
-  margin: 10px 0;
+  font-size: 17px;
+  line-height: 1.5;
 }
 
 footer {
-  background: rgba(0, 0, 0, 0.65);
+  width: 100%;
   text-align: center;
   padding: 20px;
-  margin-top: 50px;
   color: #00eaff;
   text-shadow: 0 0 8px #00eaff;
+  border-top: 3px solid #00eaff;
+  margin-top: 40px;
 }
 
-.container {
-  display: flex;
-  gap: 20px;
+@media (max-width: 1024px) {
+  header {
+    width: 220px;
+  }
+
+  main {
+    margin-left: 220px;
+    padding: 25px;
+  }
 }
 
 @media (max-width: 768px) {
-  .container {
+  body {
     flex-direction: column;
   }
+
+  header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 3px solid #00eaff;
+  }
+
+  nav ul li {
+    display: inline-block;
+    width: auto;
+    padding: 10px 15px;
+    border-bottom: none;
+    border-right: 1px solid #00eaff;
+  }
+
+  nav ul li:last-child {
+    border-right: none;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
 }
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  p, ul li {
+    font-size: 15px;
+  }
+
+  section {
+    padding: 18px;
+  }
+
+  nav ul li {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+/* AI pomagało również trochę z kodowaniem responsywnośći (szczególnie z doborem pikseli) */

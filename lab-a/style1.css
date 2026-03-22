@@ -8,9 +8,10 @@ body {
 }
 
 header {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.85);  /* AI pomagało z doborem wartości aby strona była czytelna i przejrzysta */
   padding: 20px;
   text-align: center;
+  border-bottom: 3px solid #ccc;
 }
 
 header h1 {
@@ -30,12 +31,17 @@ nav ul li {
   font-weight: bold;
 }
 
-section {
-  background: rgba(255, 255, 255, 0.85);
-  margin: 30px auto;
-  padding: 20px;
+main {
   width: 80%;
+  margin: 30px auto;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.85);    /* AI pomagało z doborem wartości aby strona była czytelna i przejrzysta */
+  margin: 30px 0;
+  padding: 20px;
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 h2 {
@@ -53,19 +59,74 @@ ul li {
 }
 
 footer {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.85);  /* AI pomagało z doborem wartości aby strona była czytelna i przejrzysta */
   text-align: center;
   padding: 15px;
   margin-top: 40px;
+  border-top: 3px solid #ccc;
 }
 
-.container {
-  display: flex;
-  gap: 20px;
+@media (max-width: 1024px) {
+  main {
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
 }
 
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  main {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  section {
+    margin: 20px 0;
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
   }
 }
+
+@media (max-width: 480px) {
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  nav ul li {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 12px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p, ul li {
+    font-size: 15px;
+  }
+}
+
+/* AI pomagało również trochę z kodowaniem responsywnośći (szczególnie z doborem pikseli) */
