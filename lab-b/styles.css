@@ -42,13 +42,20 @@ body {
   background: #f9f9f9;
 }
 
-#task-list li span {
-  flex-grow: 1;
+#task-list li.completed span {
+  text-decoration: line-through;
+  color: #999;
 }
 
+#task-list li span {
+}
+
+#task-list li input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
 
 #task-list li input {
-  flex-grow: 1;
   border: none;
   outline: none;
   font-size: inherit;
