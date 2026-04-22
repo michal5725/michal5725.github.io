@@ -23,7 +23,7 @@ document.getElementById('locationBtn').addEventListener('click', () => {
         } else {
             alert('Błąd podczas pobierania lokalizacji: ' + err.message);
         }
-    });
+    }); // if else dadało AI
 });
 
 document.getElementById('downloadBtn').addEventListener('click', () => {
@@ -36,10 +36,8 @@ function divideAndShuffle(canvas) {
     const piecesContainer = document.getElementById('puzzlePieces');
     piecesContainer.innerHTML = '';
     const board = document.getElementById('puzzleBoard');
-    board.innerHTML = '';
-    // Dodaj siatkę 16 miejsc
     for (let i = 0; i < 4; i++) {
-        for (let j = 0; j < 4; j++) {
+        for (let j = 0; j < 4; j++) {  // pętle dla 16-siatki pisało AI
             const spot = document.createElement('div');
             spot.className = 'puzzle-spot';
             spot.style.left = `${j * 100}px`;
@@ -50,7 +48,7 @@ function divideAndShuffle(canvas) {
         }
     }
     const pieces = [];
-    const size = 100; // Rozmiar kawałka
+    const size = 100;
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
             const pieceCanvas = document.createElement('canvas');
@@ -63,7 +61,6 @@ function divideAndShuffle(canvas) {
             pieces.push(pieceCanvas);
         }
     }
-    // Wymieszaj i rozmieść losowo w piecesContainer
     pieces.sort(() => Math.random() - 0.5);
     pieces.forEach(piece => {
         piece.style.left = `${Math.random() * 300}px`;
@@ -71,16 +68,14 @@ function divideAndShuffle(canvas) {
         piece.addEventListener('dragstart', e => e.dataTransfer.setData('text', piece.dataset.id));
         piecesContainer.appendChild(piece);
     });
-    // Obsługa drop na planszy
+    // Drop na planszy trochę pomagał Copilot
     board.addEventListener('dragover', e => e.preventDefault());
     board.addEventListener('drop', e => {
         e.preventDefault();
         const id = e.dataTransfer.getData('text');
         const piece = document.querySelector(`[data-id="${id}"]`);
-        // Znajdź spot na podstawie target lub najbliższy
         let spot = e.target.closest('.puzzle-spot');
         if (!spot) {
-            // Jeśli poza spotem, znajdź najbliższy
             const rect = board.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -89,7 +84,6 @@ function divideAndShuffle(canvas) {
             spot = board.querySelector(`[data-row="${row}"][data-col="${col}"]`);
         }
         if (spot) {
-            // Jeśli miejsce zajęte, zamień
             const existingPiece = spot.querySelector('canvas');
             if (existingPiece) {
                 piecesContainer.appendChild(existingPiece);
@@ -106,7 +100,6 @@ function divideAndShuffle(canvas) {
 }
 
 function checkCompletion() {
-    // Sprawdź, czy każdy spot ma właściwy kawałek
     const board = document.getElementById('puzzleBoard');
     const spots = board.querySelectorAll('.puzzle-spot');
     let complete = true;
@@ -117,14 +110,12 @@ function checkCompletion() {
         }
     });
     if (complete) {
-        // Dodaj komunikat na planszy
         if (!board.querySelector('.completion-message')) {
             const message = document.createElement('div');
             message.className = 'completion-message';
             message.textContent = 'Udało ci się ułożyć puzzle!';
             board.appendChild(message);
         }
-        // Wyświetl notyfikację, jeśli zgoda została udzielona
         if ('Notification' in window && Notification.permission === 'granted') {
             new Notification('Gratulacje! Układanka ukończona!');
         }
