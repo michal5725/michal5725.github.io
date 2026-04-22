@@ -1,13 +1,9 @@
-// Żądanie zgody na lokalizację i powiadomienia
-// Automatyczne żądanie zgody na lokalizację na początku strony
 navigator.geolocation.getCurrentPosition(() => {}, () => {});
 
-// Automatyczne żądanie zgody na powiadomienia na początku strony
 if ('Notification' in window) {
     Notification.requestPermission();
 }
 
-// Inicjalizacja mapy
 const map = L.map('map').setView([52.2297, 21.0122], 13);
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: ''
