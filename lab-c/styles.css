@@ -65,6 +65,10 @@ button {
     border: 1px solid gray;
 }
 
+#mapCanvas {
+    display: none;
+}
+
 .puzzle-spot {
     position: absolute;
     width: 100px;
