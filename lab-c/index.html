@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Michał Masalski (57935) - PTW LAB C</title>
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="styles.css" type="text/css">
-    <script src="scripts.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/leaflet-image@0.4.0/leaflet-image.js"></script>
+    <script src="script.js" defer></script>
 </head>
-<h1> PUZZLE </h1>
 <body>
-
+    <h1> PUZZLE </h1>
+    <div id="map-container">
+        <div id="map"></div>
+        <div id="buttons">
+            <button id="locationBtn">Moja lokalizacja</button>
+            <button id="downloadBtn">Pobierz mapę</button>
+        </div>
+    </div>
+    <div id="puzzlePieces"></div>
+    <div id="puzzleBoard"></div>
 </body>
 </html>
