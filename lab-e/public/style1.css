@@ -1,0 +1,164 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    background-attachment: fixed;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    text-align: center;
+    border-bottom: 4px solid #005bb5;
+}
+
+header h1 {
+    font-size: 34px;
+    margin: 0;
+    color: #005bb5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+main {
+    width: 85%;
+    margin: 35px auto;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 35px 0;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    border-left: 5px solid #0072ff;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: #005bb5;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 4px solid #005bb5;
+}
+
+#style-switcher {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 20px;
+    border-radius: 8px;
+}
+
+#style-switcher h3 {
+    color: #005bb5;
+    margin-top: 0;
+}
+
+#style-switcher button {
+    background: #0072ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#style-switcher button:hover {
+    background: #005bb5;
+}
+
+@media (max-width: 1024px) {
+    main {
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav ul li {
+        margin: 0 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 12px 0;
+    }
+
+    main {
+        width: 95%;
+        margin: 25px auto;
+    }
+
+    section {
+        margin: 25px 0;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav ul li {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p, ul li {
+        font-size: 15px;
+    }
+}
+
