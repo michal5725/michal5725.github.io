@@ -29,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $inputFormat  = strtolower(trim($_POST['input_format']  ?? 'csv'));
     $outputFormat = strtolower(trim($_POST['output_format'] ?? 'json'));
 
-    // zapis do ciasteczek
     setcookie('input', $input, time() + 3600);
     setcookie('input_format', $inputFormat, time() + 3600);
     setcookie('output_format', $outputFormat, time() + 3600);
