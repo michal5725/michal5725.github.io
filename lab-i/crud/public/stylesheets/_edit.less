@@ -1,0 +1,63 @@
+.edit {
+  .edit-form {
+    margin-bottom: 2em;
+    padding: 2em;
+    background-color: #fafafa;
+    border-radius: 4px;
+
+    .form-group {
+      margin-bottom: 1.5em;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      @media (min-width: @mobileBreakpoint) {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      label {
+        display: inline-block;
+        flex-grow: 1;
+        min-width: 150px;
+        font-weight: 600;
+        margin-bottom: 0.5em;
+
+        @media (min-width: @mobileBreakpoint) {
+          margin-bottom: 0;
+        }
+      }
+
+      input[type="text"] {
+        flex-grow: 3;
+        padding: 0.75em;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: inherit;
+      }
+
+      textarea {
+        height: 200px;
+        flex-grow: 3;
+        padding: 0.75em;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: inherit;
+        resize: vertical;
+      }
+
+      input[type="submit"] {
+        padding: 0.75em 1.5em;
+        background-color: @accentColor;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+
+        &:hover {
+          background-color: darken(@accentColor, 10%);
+        }
+      }
+    }
+  }
+}

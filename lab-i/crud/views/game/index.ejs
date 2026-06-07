@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Games List</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="index">
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/game">Games</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Games List</h1>
+    <a href="/game/create">Create new</a>
+    <ul class="index-list">
+      <% games.forEach(function(game) { %>
+        <li>
+          <a href="/game/<%= game.id %>"><%= game.title %></a> - <%= game.developer %>
+          <ul class="action-list">
+            <li><a href="/game/<%= game.id %>/edit">Edit</a></li>
+          </ul>
+        </li>
+      <% }); %>
+    </ul>
+  </main>
+
+  <footer>
+  </footer>
+</body>
+</html>

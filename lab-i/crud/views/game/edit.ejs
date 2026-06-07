@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Game (<%= game.title %>)</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="edit">
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/game">Games</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Edit: <%= game.title %></h1>
+    <form action="/game/<%= game.id %>/edit" method="POST" class="edit-form">
+      <div class="form-group">
+        <label for="title">Subject</label>
+        <input type="text" id="title" name="title" value="<%= game.title %>">
+      </div>
+
+      <div class="form-group">
+        <label for="developer">Content</label>
+        <textarea id="developer" name="developer"><%= game.developer %></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description"><%= game.description %></textarea>
+      </div>
+
+      <div class="form-group">
+        <label></label>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+
+    <ul class="action-list">
+      <li>
+        <a href="/game">Back to list</a>
+      </li>
+      <li>
+        <form action="/game/<%= game.id %>/delete" method="POST" style="display:inline;">
+          <input type="submit" value="Delete" onclick="return confirm('Are you sure?')">
+        </form>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+  </footer>
+</body>
+</html>

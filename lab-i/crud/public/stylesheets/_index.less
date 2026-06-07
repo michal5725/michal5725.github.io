@@ -1,0 +1,35 @@
+.index {
+  ul.index-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+
+    li {
+      margin-bottom: 2em;
+      padding: 1em;
+      background-color: #fafafa;
+      border-left: 4px solid @accentColor;
+
+      a:first-child {
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  a[href$="/create"] {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background-color: @accentColor;
+    color: #ffffff;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+
+    &:hover {
+      background-color: darken(@accentColor, 10%);
+      color: #ffffff;
+    }
+  }
+}
+

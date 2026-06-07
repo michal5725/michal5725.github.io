@@ -1,0 +1,18 @@
+/* Main stylesheet that imports partials from another project.
+   less-middleware in app.js will compile this to /stylesheets/style.css
+   when the browser requests /stylesheets/style.css. Adjust imports if needed.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+@import "_variables.less";
+@import "_layout.less";
+@import "_nav.less";
+@import "_index.less";
+@import "_footer.less";
+@import "_show.less";
+@import "_edit.less";
+
+/* If the partials expect certain class names or markup from the other project,
+   you may need to adapt HTML in your views to match. */
+
